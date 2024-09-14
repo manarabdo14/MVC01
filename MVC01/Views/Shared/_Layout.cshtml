@@ -1,0 +1,48 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    @* Start Header *@
+    <nav class="mt-5">
+        <center> 
+            @* 1-Html Tages *@
+            @* <a href="/Home/Index" class="btn btn-primary">Home</a> *@           
+            @* 2-Html Healper  Asp.net framework*@
+            @Html.ActionLink("Home", "Index", "Home" , null , new{
+                @class = "btn btn-primary"
+            })
+            @* 3-Tag Healpers Asp.net core  *@
+            <a Asp-Controller="Home" asp-action="AboutUS"  class="btn btn-secondary">About Us</a>
+            <a  asp-controller="Home" asp-action="Privacy" class="btn btn-success">Privacy</a>
+            <a  asp-controller="Home" asp-action="ContactUS" class="btn btn-warning">Contact Us</a>
+            <a  asp-controller="Account" asp-action="Login" class="btn btn-info">Login</a>
+            <a  asp-controller="Account" asp-action="Register" class="btn btn-danger">Reigister</a>
+        </center>
+    </nav>
+    @*  End Header *@
+
+    <div>
+        @RenderBody()
+    </div> 
+
+    @* Start Footer *@
+    <footer class="mt-5">
+        <center>
+            <div>
+                <p>
+                    MANAR &copy; @DateTime.Now.Year
+                </p>
+            </div>
+        </center>
+    </footer>
+    @* End Footer *@
+</body>
+</html>
